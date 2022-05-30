@@ -21,4 +21,19 @@ lot_summary <- Suspension_table %>% group_by(Manufacturing_Lot) %>%  summarize(M
 
 ####################################################################################
 
-#Deliverable 3
+#Deliverable 3 - T-Tests on Suspension Coils
+?t.test()
+
+t.test(Suspension_table$PSI, mu=1500) # T-test on all springs data compared to avg of 1500
+
+Spring_lot1 <- Suspension_table %>% filter(Manufacturing_Lot=='Lot1') #Filter only Lot 1 Data
+Spring_lot2 <- Suspension_table %>% filter(Manufacturing_Lot=='Lot2') #Filter only Lot 2 Data
+Spring_lot3 <- Suspension_table %>% filter(Manufacturing_Lot=='Lot3') #Filter only Lot 3 Data
+
+t.test(Spring_lot1$PSI, mu=1500) # T-test on springs from Lot 1 compared to avg of 1500
+t.test(Spring_lot2$PSI, mu=1500) # T-test on springs from Lot 2 compared to avg of 1500
+t.test(Spring_lot3$PSI, mu=1500) # T-test on springs from Lot 3 compared to avg of 1500
+
+
+
+
